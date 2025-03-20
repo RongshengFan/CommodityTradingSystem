@@ -1,0 +1,2 @@
+# CommodityTradingSystem
+SDUCS 2025春学期软件工程与实践课程实验，实现一个商品网上交易系统
