@@ -7,7 +7,7 @@
 
 ## 系统架构图
 
-项目主体骨架基于`Spring Cloud Alibaba`生态体系，使用`MySQL`进行数据持久化管理，采用`Vue3`生态体系与`Element Puls UI`框架完成前端制作，同时项目提供`C++`微服务开发解决方案与集成、使用`Jenkins`实现`CD/CI`。
+项目主体骨架基于Spring Cloud Alibaba生态体系，使用MySQL进行数据持久化管理，采用Vue3生态体系与Element Puls UI框架完成前端制作，同时项目提供C++微服务开发解决方案与集成、使用Jenkins实现CD/CI。
 
 ![architecture](./documents/00、preview-pic/architecture.jpg)
 
