@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resources/mapper/GoodsMapper.xml -->
+<mapper namespace="com.admin.mapper.GoodsMapper">
+    <select id="selectGoodsPage" resultType="com.admin.entity.Goods">
+        SELECT *
+        FROM goods
+        <where>
+            <if test="query.nameKeyword != null and query.nameKeyword != ''">
+                good_name LIKE CONCAT('%', #{query.nameKeyword}, '%')
+            </if>
+            <if test="query.type != null and query.type != ''">
+                AND good_type = #{query.type}
+            </if>
+            <if test="query.state != null and query.state != ''">
+                AND good_state = #{query.state}
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+</mapper>

@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.5'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.admin'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot基础依赖
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.apache.velocity:velocity-engine-core:2.3'
+
+    // 数据库相关
+    implementation 'com.baomidou:mybatis-plus-boot-starter:3.5.3.2'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // 开发工具
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // 代码生成器（仅开发时使用）
+    developmentOnly 'com.baomidou:mybatis-plus-generator:3.5.3.2'
+    developmentOnly 'org.freemarker:freemarker:2.3.32'
+
+    // 测试
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.baomidou:mybatis-plus-generator:3.5.3.2'
+    implementation 'org.freemarker:freemarker:2.3.32'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.19'
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
