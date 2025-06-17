@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shanzhu.em.mapper.MessageMapper">
+
+    <resultMap id="Message" type="com.shanzhu.em.entity.Message">
+        <result column="id" property="id"></result>
+        <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="time" property="time"></result>
+        <result column="good_id" property="goodId"></result>
+        <result column="score" property="score"></result>
+        <result column="user_id" property="userId"></result>
+    </resultMap>
+
+    <select id="findAllMessage" resultMap="Message">
+        select * from message
+    </select>
+
+</mapper>
